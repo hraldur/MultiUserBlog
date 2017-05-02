@@ -10,7 +10,7 @@ https://fswdmultiuserblog.appspot.com/
 * Browser
 
 ## Installation
-Download the zip or clone the GitHub Repository
+Download the zip or clone the GitHub Repository<br>
 $ git clone https://github.com/hraldur/MultiUserBlog.git
 
 
