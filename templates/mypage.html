@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<section class="row">
+		<div class="col-md-12">
+		</div>
+	</section>
+	
+	<section class="row">
+		<div class="col-md-12">
+			{% for p in posts %}
+				{{ p.render() | safe }}
+	
+			{% endfor %}
+		</div>
+
+
+	</section>
+{% endblock %}

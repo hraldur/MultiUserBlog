@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<form method="post">
+		<div class="col-md-6 box box-newpost">
+			<h2>New Post</h2>
+		
+			<div>
+				<h3>
+					Subject
+				</h3>
+			</div>
+			<input type="text" class="newpost" name="subject" value="{{subject}}">
+	
+			<div>
+				<h3>
+					blog
+				</h3>
+			</div>
+			<textarea class="newpost" name="content">{{content}}
+			</textarea>
+	
+
+		<div class="error">
+			{{error}}
+		</div>
+		<div>
+			<input class="btn btn-margin" type="submit">
+		</div>
+		</div>
+	</form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		{% if page_error %}
+			<h2 class="error">{{page_error}}</h2>
+		{% else %}
+			<h2>Number of likes: {{ count }}</h2>
+		{% endif %}
+	</div>
+
+	<form action="/{{post.key().id()}}">
+		<div class="col-md-12">
+    		<input class="btn" type="submit" value="Back to Post" />
+    	</div>
+	</form>
+	</div>
+{% endblock %}

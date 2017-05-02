@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+	<h2 class="error">
+		{{page_error}}
+	</h2>
+	<form method="post">
+		<div class="col-md-5 box">
+			<table class="login  ">
+				<tr>
+				<td>
+					<h3>Username:</h3>
+				</td>
+				<td>
+					<input class="input-text" type="text" name="username" value="{{username}}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>Password:</h3>
+				</td>
+				<td>
+					<input class="input-text" type="password" name="password" value="">
+				</td>
+			</tr>
+			<tr>
+				<td class="error">
+					{{error}}
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input class="btn btn-submit" type="submit" value="submit">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+
+	</form>
+
+	<form action="/signup">
+		<div class="col-md-5 box text-center">
+			<h2>
+				Are you new?
+			</h2>
+    		<input class="btn btn-submit" type="submit" value="Register" />
+    	</div>
+	</form>
+
+
+
+</div>
+
+{% endblock %}

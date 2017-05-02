@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<section class="row">
+		{{post.render() | safe}}
+			<div class="col-md-12 bottom-margin">
+				{% if user.name %}
+					<a class="btn-like" href="/{{post.key().id()}}/like" >Like {{likes}}</a>
+				{% else %}
+					<h3>{{likes}} likes</h3>
+				{% endif %}
+			</div>
+			{% if edit %}
+				<div class="col-md-12">
+					<a class="btn-edit" href="/{{post.key().id()}}/editpost" >Edit</a>
+					<a class="btn-edit" href="/{{post.key().id()}}/deletepost">Delete</a>
+				</div>
+			{% endif %}
+		</section>
+
+
+
+	{% include 'comment-form.html' %}
+
+
+	{% for comment in comments %}
+
+		{{comment.render() | safe}}
+		{% if comment.author.name == user.name %}
+			<div class="col-md-12">
+				<a class="btn-edit" href="/{{post.key().id()}}/{{comment.key().id()}}/editcomment">edit </a>
+				<a class="btn-edit" href="/{{post.key().id()}}/{{comment.key().id()}}/deletecomment">delete </a>
+			</div>
+		{% endif %}
+		<br>
+		<br>
+	{% endfor %}
+
+
+
+{% endblock %}

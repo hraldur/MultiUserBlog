@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+<form method="post">
+	<div class="col-md-5 box box-signup">
+	<table class="signup">
+		<tr>
+			<td>
+				<h3>Username:</h3>
+			</td>
+			<td>
+				<input type="text" name="username" value="{{username}}">
+			</td>
+			<td class="error">
+				{{error_username}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Password:</h3>
+			</td>
+			<td>
+				<input type="password" name="password" value="">
+			</td>
+			<td class="error">
+				{{error_password}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Verify Password:</h3>
+			</td>
+			<td>
+				<input type="password" name="verify" value="">
+			</td>
+			<td class="error">
+				{{error_verify}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Email (optional):</h3>
+			</td>
+			<td>
+				<input type="text" name"email" value="{{email}}">
+			</td>
+			<td class="error">
+				{{error_email}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td><input class="btn btn-submit" type="submit" value="submit">
+			</td>
+		</tr>
+	</table>
+	</div>
+
+
+</form>
+
+	<form action="/login">
+		<div class="col-md-5 box box-signup text-center">
+			<h2>
+				Already have an account?
+			</h2>
+    		<input class="btn btn-submit" type="submit" value="Login" />
+    	</div>
+	</form>
+
+</div>
+{% endblock %}

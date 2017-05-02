@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<!--meta-->
+  		<meta charset="utf-8">
+  		<meta name= "viewport" content= "width=device-width, initial-scale=1">
+  
+  		<!--Title-->
+  		<title>Multi User Blog</title>
+
+		<!--Style-->
+  		<link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+  		<link type="text/css" rel="stylesheet" href="/static/bootstrap/css/style.css" />
+
+  		<!--Font-->
+  		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400" rel="stylesheet">
+
+
+	</head>
+	<body>
+		<div class="content">
+			<section class="row" id="header">
+				<div class="col-md-6 text-left">
+					<h1 class="title">Multi User Blog</h1>
+				</div>
+				<div class="col-md-6 text-right">
+					{% if user %}
+						<h4>Logged in as {{user.name}} (
+							<a href="/logout">Logout</a> )</h4>
+					
+					{% else %}
+						<h4>
+							<a href="/login">Login</a> 
+						</h4>
+					{% endif %}
+
+
+				</div>
+			</section>
+			{% include 'navbar.html' %}
+			
+		
+			
+
+			{% block content %}
+			{% endblock %}
+		</div>
+
+	</body>
+</html>
